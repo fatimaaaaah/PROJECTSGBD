@@ -1,0 +1,227 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Animation pour les icônes */
+@keyframes iconAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Taille et animation pour les icônes */
+.box-item i {
+  font-size: 48px; /* Augmenter la taille des icônes */
+  animation: iconAnimation 1s infinite; /* Ajouter l'animation */
+  animation-timing-function: ease-in-out; /* Utiliser une accélération et un ralentissement fluides */
+  margin-right: 10px;
+}
+
+.box-item .box-text {
+  flex-grow: 1; /* Faire en sorte que le texte prenne tout l'espace disponible */
+}
+
+.box-item .box-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+.nav-main {
+  display: inline-block;
+}
+body h2 {
+  margin-left: 100px;
+  margin-left: 550px;
+  margin-bottom: 30px;
+}
+body nav label ul h2 {
+  margin-left: 105px;
+}
+.nav-main label {
+  display: block;
+  height: 2em;
+  width: 2em;
+  text-indent: -9999px;
+}
+
+.nav-main label > i {
+  display: block;
+  text-indent: 0px;
+  padding: 1em;
+}
+
+.nav-main input {
+  display: none;
+}
+
+.nav-main input:checked + ul {
+  transform: translateX(0%);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-main input:checked + ul > li {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.nav-main input:checked + ul > li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.nav-main ul {
+  position: fixed;
+  padding-left: 0;
+  top: 0;
+  margin: 0;
+  margin-left: -30px;
+  height: 100vh;
+  width: 20em;
+  padding: 0;
+  list-style: none;
+  transform: translateX(-100%);
+  transition: all .2s ease;
+  background: rgb(0, 157, 255); /* Bleu clair */
+  text-indent: 0;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.0);
+  color: rgb(255, 255, 255);
+}
+
+.nav-main ul > li {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all .3s ease .05s;
+}
+
+.nav-main ul > li:nth-child(1) a {
+  padding: 0;
+}
+
+.nav-main ul > li a {
+  display: block;
+  position: relative;
+  padding: 1em 1em;
+  color: var(--color-tertiary);
+  font-weight: 900;
+  text-decoration: none;
+  transition: all .1s ease;
+}
+
+.nav-main ul > li a:hover {
+  background: var(--color-secondary-2);
+}
+
+.pointer {
+  cursor: pointer;
+  padding: 1em;
+  height: 1em;
+  width: 1em;
+}
+.fa-sign-out-alt {
+  cursor: pointer;
+  padding: 1em;
+  height: 3em;
+  width: 2em;
+}
+.fa-bars pointer {
+  size : 30px;
+}
+/* Boîtes */
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-left: 200px;
+}
+
+.box-item {
+  width: 45%; /* Taille des boîtes */
+  background-color: #2d96dc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: flex-start; /* Aligner les éléments en haut */
+}
+
+.box-item i {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.box-item .box-text {
+  flex-grow: 1; /* Faire en sorte que le texte prenne tout l'espace disponible */
+}
+
+.box-item .box-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.box-item:last-child {
+  margin-right: 0; /* Retirer l'espace à droite pour la dernière boîte */
+}
+
+.box-item:hover {
+  transform: scale(1.05); /* Agrandir légèrement la boîte au survol */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ajuster l'ombre de la boîte au survol */
+}
+
+
+/* Tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(117, 128, 140); /* Bleu foncé */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.termine {
+  color: #4CAF50; /* Couleur pour le statut "Completed" */
+}
+
+.encours {
+  color: #FFA500; /* Couleur pour le statut "Pending" */
+}
+
+.enattente {
+  color: #2196F3; /* Couleur pour le statut "In Progress" */
+}
+
+
+.fa-user ,
+.fa-chart-bar,
+.fa-sign-out-alt {
+  font-size: 25px; /* Augmenter la taille de tous les icônes */
+  color: black ;
+}
+
+.fa-bars {
+  font-size: 24px; /* Augmenter la taille de tous les icônes */
+}

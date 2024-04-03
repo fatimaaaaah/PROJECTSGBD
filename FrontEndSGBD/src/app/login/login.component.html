@@ -1,0 +1,36 @@
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="img">
+			<img src="assets\3071357.jpg" alt="image"/>
+		</div>
+		<div class="login-content">
+			<form>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<input type="text" class="input" placeholder="Nom d'utilisateur ou E-mail">
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i"> 
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<input type="password" class="input" placeholder="Mot de passe">
+					</div>
+				</div>
+				<button type="submit" class="btn" (click)="redirigerVersPage()" >Se connecter</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

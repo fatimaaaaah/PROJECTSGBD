@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+ <!-- clients.component.html -->
+ <nav class="nav-main">
+    <label>
+        <i class="fa fa-bars pointer"></i>
+        <input type="checkbox">
+        <ul>
+            <li><a><i class="fa fa-times pointer"></i></a></li>
+            <h2>Menu</h2>
+            <li><a routerLink="../clients"><i class="fa fa-user pointer"></i> Visualiser clients</a></li>
+            <li><a routerLink="../transactions"><i class="fa fa-chart-bar pointer"></i> Dashboards transaction</a></li>
+            <li><a routerLink="../login"><i class="fas fa-sign-out-alt"></i> Se deconnecter</a></li>
+          
+        </ul>
+    </label>
+</nav>
+
+<h2>Liste des Clients</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>IDClient</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Statut</th>
+            <th>Date de création</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients; let i=index" [ngClass]="{'row-white': i % 2 === 0, 'row-blue': i % 2 !== 0}">
+            <!-- Utilisez [ngClass] pour basculer entre les classes CSS row-white et row-blue en fonction de l'index de la ligne -->
+            <td>{{ client.id }}</td>
+            <td>{{ client.nom }}</td>
+            <td>{{ client.prenom }}</td>
+            <td>{{ client.status }}</td>
+            <td>{{ client.dateAdded }}</td>
+            <td>{{ client.total }}</td>
+            <td class="action-icons">
+                <button class="btn" (click)="ajouterClient()"><i class="fa fa-plus"></i></button>
+                <button class="btn" (click)="modifierClient(client)"><i class="fa fa-edit"></i></button>
+                <button class="btn" (click)="supprimerClient(client)"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

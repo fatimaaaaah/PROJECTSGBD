@@ -1,0 +1,64 @@
+<!-- transactions.component.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav-main">
+    <label>
+        <i class="fa fa-bars pointer"></i>
+        <input type="checkbox">
+        <ul>
+            <li><a><i class="fa fa-times pointer"></i></a></li>
+            <h2>Menu</h2>
+            <li><a routerLink="../clients"><i class="fa fa-user pointer"></i> Visualiser clients</a></li>
+            <li><a routerLink="../transactions"><i class="fa fa-chart-bar pointer"></i> Dashboards transactions</a></li>
+            <li><a routerLink="../login"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a></li>
+          </ul>
+    </label>
+</nav>
+
+<h2>Liste des transactions</h2>
+<div class="box">
+  <div class="box">
+    <div class="box-item">
+        <i class="fa fa-users"></i>
+        <span class="box-text">Nombre de Clients</span>
+        <span class="box-number">{{ numberOfClients }}</span>
+    </div>
+    <div class="box-item">
+        <i class="fa fa-exchange-alt"></i>
+        <span class="box-text">Transactions en Cours</span>
+        <span class="box-number">{{ numberOfTransactions }}</span>
+    </div>
+</div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID Client</th>
+      <th>Nom du Produit</th>
+      <th>Montant</th>
+      <th>Statut</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.clientId }}</td>
+      <td>{{ transaction.productName }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td [ngClass]="{'completed': transaction.status === 'Terminé', 'pending': transaction.status === 'Pending', 'inprogress': transaction.status === 'In Progress'}">{{ transaction.status }}</td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+</body>
+</html>
